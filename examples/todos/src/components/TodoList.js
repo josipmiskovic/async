@@ -1,26 +1,22 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import Todo from './Todo'
-
-const TodoList = ({ todos, toggleTodo }) => (
-  <ul>
-    {todos.map(todo =>
-      <Todo
-        key={todo.id}
-        {...todo}
-        onClick={() => toggleTodo(todo.id)}
-      />
-    )}
-  </ul>
-)
-
-TodoList.propTypes = {
-  todos: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.number.isRequired,
-    completed: PropTypes.bool.isRequired,
-    text: PropTypes.string.isRequired
-  }).isRequired).isRequired,
-  toggleTodo: PropTypes.func.isRequired
-}
-
-export default TodoList
+"use strict";
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+exports.__esModule = true;
+var React = require("react");
+var Todo_1 = require("./Todo");
+var TodoList = function (_a) {
+    var todos = _a.todos, toggleTodo = _a.toggleTodo;
+    return (React.createElement("ul", null, todos.map(function (todo) {
+        return React.createElement(Todo_1["default"], __assign({ key: todo.id }, todo, { onClick: function () { return toggleTodo(todo.id); } }));
+    })));
+};
+exports["default"] = TodoList;
