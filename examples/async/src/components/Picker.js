@@ -1,26 +1,12 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-
-const Picker = ({ value, onChange, options }) => (
-  <span>
-    <h1>{value}</h1>
-    <select onChange={e => onChange(e.target.value)}
-            value={value}>
-      {options.map(option =>
-        <option value={option} key={option}>
-          {option}
-        </option>)
-      }
-    </select>
-  </span>
-)
-
-Picker.propTypes = {
-  options: PropTypes.arrayOf(
-    PropTypes.string.isRequired
-  ).isRequired,
-  value: PropTypes.string.isRequired,
-  onChange: PropTypes.func.isRequired
-}
-
-export default Picker
+"use strict";
+exports.__esModule = true;
+var React = require("react");
+var Picker = function (_a) {
+    var value = _a.value, onChange = _a.onChange, options = _a.options;
+    return (React.createElement("span", null,
+        React.createElement("h1", null, value),
+        React.createElement("select", { onChange: function (e) { return onChange(e.target.value); }, value: value }, options.map(function (option) {
+            return React.createElement("option", { value: option, key: option }, option);
+        }))));
+};
+exports["default"] = Picker;
